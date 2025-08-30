@@ -1,10 +1,11 @@
 # Netflix-Data-Analysis-Using-SQL
 ![Netflix Logo](https://github.com/ruchigupta-code/Netflix-Data-Analysis-Using-SQL/blob/main/logo.png)
 
-Overview
+#Overview
 This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
 
-Objectives
+#Objectives
+
 Analyze the distribution of content types (movies vs TV shows).
 Identify the most common ratings for movies and TV shows.
 List and analyze content based on release years, countries, and durations.
@@ -12,7 +13,7 @@ Explore and categorize content based on specific criteria and keywords.
 Dataset
 The data for this project is sourced from the Kaggle dataset:
 
-Dataset Link: Movies Dataset
+#Dataset Link: Movies Dataset
 Schema
 DROP TABLE IF EXISTS netflix;
 CREATE TABLE netflix
@@ -30,14 +31,14 @@ CREATE TABLE netflix
     listed_in    VARCHAR(250),
     description  VARCHAR(550)
 );
-Business Problems and Solutions
+#Business Problems and Solutions
 1. Count the Number of Movies vs TV Shows
 SELECT 
     type,
     COUNT(*)
 FROM netflix
 GROUP BY 1;
-Objective: Determine the distribution of content types on Netflix.
+#Objective: Determine the distribution of content types on Netflix.
 
 2. Find the Most Common Rating for Movies and TV Shows
 WITH RatingCounts AS (
@@ -185,9 +186,11 @@ FROM (
     FROM netflix
 ) AS categorized_content
 GROUP BY category;
-Objective: Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
 
-Findings and Conclusion
+#Objective: Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
+
+#Findings and Conclusion
+
 Content Distribution: The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
 Common Ratings: Insights into the most common ratings provide an understanding of the content's target audience.
 Geographical Insights: The top countries and the average content releases by India highlight regional content distribution.
